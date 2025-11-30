@@ -5,7 +5,7 @@
     <title>Seguridad digital para estudiantes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Framework CSS (Bootstrap) para cumplir el requisito -->
+    <!-- Framework CSS (Bootstrap) para cumplir el requisito de la actividad -->
     <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -75,7 +75,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN RIESGOS -->
+    <!-- SECCIÓN RIESGOS (tarjetas estáticas) -->
     <section id="riesgos" class="seccion seccion-riesgos">
         <div class="contenedor">
             <h2 class="titulo-seccion">Riesgos digitales frecuentes</h2>
@@ -116,6 +116,58 @@
                         o cometer fraudes en tu nombre.
                     </p>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SLIDER DE RIESGOS -->
+    <section id="slider-riesgos" class="seccion seccion-slider">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">Riesgos</h2>
+            <p class="texto-seccion">
+                Usa las flechas para ver algunos riesgos digitales explicados de forma sencilla.
+            </p>
+
+            <div class="contenedor-slider">
+                <button class="boton-slider boton-slider-anterior" aria-label="Riesgo anterior">
+                    &#10094;
+                </button>
+
+                <div class="ventana-slider">
+                    <article class="diapositiva-slider">
+                        <h3 class="titulo-slider">Phishing</h3>
+                        <p class="texto-slider">
+                            Desconfía de correos y mensajes que piden tus datos personales
+                            o te presionan para hacer clic en un enlace de inmediato.
+                        </p>
+                    </article>
+
+                    <article class="diapositiva-slider">
+                        <h3 class="titulo-slider">Archivos sospechosos</h3>
+                        <p class="texto-slider">
+                            No descargues programas ni documentos de páginas desconocidas
+                            o de enlaces que llegan por redes sociales sin contexto.
+                        </p>
+                    </article>
+
+                    <article class="diapositiva-slider">
+                        <h3 class="titulo-slider">Redes Wi-Fi públicas</h3>
+                        <p class="texto-slider">
+                            Evita ingresar a tu banco o a correos importantes cuando estás
+                            conectado a una red abierta de cafeterías, parques o centros comerciales.
+                        </p>
+                    </article>
+                </div>
+
+                <button class="boton-slider boton-slider-siguiente" aria-label="Riesgo siguiente">
+                    &#10095;
+                </button>
+            </div>
+
+            <div class="puntos-slider">
+                <button class="punto-slider" data-indice="0" aria-label="Ver riesgo 1"></button>
+                <button class="punto-slider" data-indice="1" aria-label="Ver riesgo 2"></button>
+                <button class="punto-slider" data-indice="2" aria-label="Ver riesgo 3"></button>
             </div>
         </div>
     </section>

@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    /* ---------- MENÚ RESPONSIVE ---------- */
+
     const botonMenu = document.querySelector(".boton-menu");
     const navegacionPrincipal = document.getElementById("navegacion-principal");
 
@@ -18,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    /* ---------- VALIDACIÓN DE FORMULARIO ---------- */
 
     const formularioContacto = document.getElementById("formulario-contacto");
     const mensajeFormulario = document.getElementById("mensaje-formulario");
@@ -92,5 +97,51 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             true
         );
+    }
+
+    /* ---------- SLIDER DE RIESGOS ---------- */
+
+    const diapositivas = document.querySelectorAll(".diapositiva-slider");
+    const botonAnterior = document.querySelector(".boton-slider-anterior");
+    const botonSiguiente = document.querySelector(".boton-slider-siguiente");
+    const puntosSlider = document.querySelectorAll(".punto-slider");
+
+    if (diapositivas.length > 0) {
+        let indiceActual = 0;
+
+        function mostrarDiapositiva(indice) {
+            diapositivas.forEach(function (diapositiva, posicion) {
+                diapositiva.classList.toggle("activa", posicion === indice);
+            });
+
+            puntosSlider.forEach(function (punto, posicion) {
+                punto.classList.toggle("activo", posicion === indice);
+            });
+
+            indiceActual = indice;
+        }
+
+        if (botonAnterior) {
+            botonAnterior.addEventListener("click", function () {
+                const nuevoIndice = (indiceActual - 1 + diapositivas.length) % diapositivas.length;
+                mostrarDiapositiva(nuevoIndice);
+            });
+        }
+
+        if (botonSiguiente) {
+            botonSiguiente.addEventListener("click", function () {
+                const nuevoIndice = (indiceActual + 1) % diapositivas.length;
+                mostrarDiapositiva(nuevoIndice);
+            });
+        }
+
+        puntosSlider.forEach(function (punto, posicion) {
+            punto.addEventListener("click", function () {
+                mostrarDiapositiva(posicion);
+            });
+        });
+
+        // Mostrar la primera diapositiva al cargar
+        mostrarDiapositiva(0);
     }
 });
