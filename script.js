@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ---------- MENÚ RESPONSIVE ---------- */
-
     const botonMenu = document.querySelector(".boton-menu");
     const navegacionPrincipal = document.getElementById("navegacion-principal");
 
@@ -21,8 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
-
-    /* ---------- VALIDACIÓN DE FORMULARIO ---------- */
 
     const formularioContacto = document.getElementById("formulario-contacto");
     const mensajeFormulario = document.getElementById("mensaje-formulario");
@@ -99,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    /* ---------- SLIDER DE RIESGOS ---------- */
 
     const diapositivas = document.querySelectorAll(".diapositiva-slider");
     const botonAnterior = document.querySelector(".boton-slider-anterior");
@@ -141,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Mostrar la primera diapositiva al cargar
         mostrarDiapositiva(0);
     }
 });
