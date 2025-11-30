@@ -65,14 +65,14 @@ body {
     color: #0d6efd;
 }
 
+
 .boton-menu {
     border: none;
     background-color: transparent;
-    font-size: 1.5rem;
-}
-
-.navegacion-principal.abierto {
-    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: auto;      /* lo empuja hacia la derecha */
+    padding: 0.2rem 0.4rem;
 }
 
 @media (min-width: 768px) {
@@ -93,6 +93,11 @@ body {
     .boton-menu {
         display: none;
     }
+}
+
+
+.navegacion-principal.abierto {
+    display: block;
 }
 
 .contenedor {
