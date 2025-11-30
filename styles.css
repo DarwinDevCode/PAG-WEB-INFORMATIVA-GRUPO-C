@@ -29,6 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* permite que el menú baje debajo del header en móvil */
 }
 
 .marca-sitio {
@@ -48,13 +49,18 @@ body {
 /* Navegación */
 
 .navegacion-principal {
-    display: none;            /* Oculto por defecto en móvil */
+    display: none;   /* oculto por defecto en móvil */
+    width: 100%;     /* ocupa todo el ancho debajo del encabezado */
+}
+
+.navegacion-principal.abierto {
+    display: block;
 }
 
 .lista-menu {
     list-style: none;
-    margin: 0;
-    padding: 0.5rem 0;
+    margin: 0.5rem 0 0 0;
+    padding: 0;
 }
 
 .lista-menu li {
@@ -74,36 +80,49 @@ body {
 /* Botón menú (móvil) */
 
 .boton-menu {
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
-    font-size: 1.4rem;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
     margin-left: auto;
-    padding: 0;
     width: 40px;
-    height: 36px;
-    border-radius: 6px;
+    height: 40px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Menú desplegado en móvil */
-.navegacion-principal.abierto {
-    display: block;
+/* Icono hamburguesa / X con pseudo-elemento */
+.boton-menu::before {
+    content: "☰";
+    font-size: 1.8rem;
 }
 
-/* Vista escritorio */
+/* Cuando el menú está abierto (aria-expanded="true"), cambia a X */
+.boton-menu[aria-expanded="true"]::before {
+    content: "✕";
+}
+
+.boton-menu:focus {
+    outline: none;
+}
+
+/* Vista escritorio: menú horizontal, sin botón */
 
 @media (min-width: 768px) {
+    .contenedor-encabezado {
+        flex-wrap: nowrap;
+    }
+
     .navegacion-principal {
         display: block;
+        width: auto;
     }
 
     .lista-menu {
         display: flex;
         gap: 1.5rem;
+        margin: 0;
         padding: 0;
     }
 
